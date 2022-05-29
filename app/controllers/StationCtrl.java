@@ -17,12 +17,16 @@ public class StationCtrl extends Controller {
 
         for (Station weather : stations) {
             if (weather.readings.size() > 0){
-                weather.weatherOutlook = weather.codeToReport(weather.readings.get(weather.readings.size()-1).code);
-                weather.weatherIcon = weather.weatherIcon(weather.readings.get(weather.readings.size()-1).code);
-                weather.minTemp = StationAnalytics.getMinTemp(weather.readings).temperature;
-//                System.out.println("Min Temp: "+ weather.minTemp + " @ " + weather.name);     //Test Output
-                weather.maxTemp = StationAnalytics.getMaxTemp(weather.readings).temperature;
-//                System.out.println("Max Temp: "+ weather.maxTemp + " @ " + weather.name);     //Test Output
+                weather.weatherOutlook  = weather.codeToReport(weather.readings.get(weather.readings.size()-1).code);
+                weather.weatherIcon     = weather.weatherIcon(weather.readings.get(weather.readings.size()-1).code);
+                weather.minTemp         = StationAnalytics.getMinTemp(weather.readings).temperature;
+                weather.maxTemp         = StationAnalytics.getMaxTemp(weather.readings).temperature;
+                weather.minWind         = StationAnalytics.getMinWind(weather.readings).windSpeed;
+                weather.maxWind         = StationAnalytics.getMaxWind(weather.readings).windSpeed;
+                weather.minPressure     = StationAnalytics.getMinPressure(weather.readings).pressure;
+                weather.maxPressure     = StationAnalytics.getMaxPressure(weather.readings).pressure;
+
+//      System.out.println("Min Temp: "+ weather.minTemp + " @ " + weather.name);     //Test Output to console
             }
         }
         //Logger.info("Station id = " + id);
@@ -46,7 +50,9 @@ public class StationCtrl extends Controller {
         station.readings.remove(reading);
         station.save();
         reading.delete();
+        redirect ("/stations/" + id);
         render("station.html", station);
+
     }
 
 }

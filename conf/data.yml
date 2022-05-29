@@ -22,6 +22,18 @@ Reading(r4):
   windSpeed: 3.5
   windDirection: 120
   pressure: 999
+Reading(r5):
+  code: 800
+  temperature: 3.5
+  windSpeed: 1.5
+  windDirection: 210
+  pressure: 999
+Reading(r6):
+  code: 600
+  temperature: 1.5
+  windSpeed: 8.5
+  windDirection: 90
+  pressure: 1100
 Station(s1):
   name: Tramore
   latitude: 52.1623500
@@ -36,6 +48,19 @@ Station(s2):
   readings:
     - r3
     - r4
+Station(s3):
+  name: Passage
+  latitude: 53.1623500
+  longitude: -8.1524400
+  readings:
+    - r5
+Station(s4):
+  name: Hook Head
+  latitude: 56.1623500
+  longitude: -8.9152440
+  readings:
+    - r6
+
 Member(m1):
   email: homer@simpson.com
   password: secret
@@ -43,10 +68,12 @@ Member(m1):
   lastname : Simpson
   stations :
     - s1
+    - s2
 Member(m2):
   email: marge@simpson.com
   password: secret
   firstname: Marge
   lastname : Simpson
   stations :
-    - s2
+    - s3
+    - s4

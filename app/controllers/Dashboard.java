@@ -17,13 +17,16 @@ public class Dashboard extends Controller
 
     for (Station weather : stations) {
       if (weather.readings.size() > 0){
-        weather.weatherOutlook = weather.codeToReport(weather.readings.get(weather.readings.size()-1).code);
-        weather.weatherIcon = weather.weatherIcon(weather.readings.get(weather.readings.size()-1).code);
-        weather.minTemp = StationAnalytics.getMinTemp(weather.readings).temperature;
-//        System.out.println("Min Temp: "+ weather.minTemp + " @ " + weather.name);     //Test Output to console
-        weather.maxTemp = StationAnalytics.getMaxTemp(weather.readings).temperature;
-//        System.out.println("Max Temp: "+ weather.maxTemp + " @ " + weather.name);     //Test Output to console
+        weather.weatherOutlook  = weather.codeToReport(weather.readings.get(weather.readings.size()-1).code);
+        weather.weatherIcon     = weather.weatherIcon(weather.readings.get(weather.readings.size()-1).code);
+        weather.minTemp         = StationAnalytics.getMinTemp(weather.readings).temperature;
+        weather.maxTemp         = StationAnalytics.getMaxTemp(weather.readings).temperature;
+        weather.minWind         = StationAnalytics.getMinWind(weather.readings).windSpeed;
+        weather.maxWind         = StationAnalytics.getMaxWind(weather.readings).windSpeed;
+        weather.minPressure     = StationAnalytics.getMinPressure(weather.readings).pressure;
+        weather.maxPressure     = StationAnalytics.getMaxPressure(weather.readings).pressure;
 
+//      System.out.println("Min Temp: "+ weather.minTemp + " @ " + weather.name);     //Test Output to console
       }
     }
     render ("dashboard.html",member, stations);

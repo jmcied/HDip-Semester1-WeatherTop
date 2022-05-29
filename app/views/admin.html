@@ -5,31 +5,31 @@
 
 <section class="ui segment">
     <h2 class="ui header">
-        All Known Songs in the Database:
+        All Known Readings in the Database:
     </h2>
     <table class="ui fixed table">
         <thead>
         <tr>
-            <th>ID </th>
-            <th>Song</th>
-            <th>Artist</th>
-            <th>Duration</th>
+            <th>Code </th>
+            <th>Temp<th>
+            <th>WindSpeed</th>
+            <th>Pressure</th>
         </tr>
         </thead>
         <tbody>
         #{list items:readings, as:'reading'}
         <tr>
             <td>
-                ${reading.id}
+                ${reading.code}
             </td>
             <td>
-                ${reading.title}
+                ${reading.temp}
             </td>
             <td>
-                ${reading.artist}
+                ${reading.windSpeed}
             </td>
             <td>
-                ${reading.duration}
+                ${reading.pressure}
             </td>
         </tr>
         #{/list}

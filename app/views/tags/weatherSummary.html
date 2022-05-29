@@ -4,42 +4,47 @@
 <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.js"></script>
 <div class="ui five stackable cards ">
         <div class = "card">
-                 <span class="content centre">
-                <h2 class = "ui blue header"> ${_station.name}<i class="large location arrow icon"></i></h2>
-                        Lat: ${_station.latitude}
+                 <span class="ui purple header content centre">
+                <h2> ${_station.name}<i class="large location arrow icon"></i></h2>
+                <h3>    Lat: ${_station.latitude}
                     <br>Lng: ${_station.longitude}
+                </h3>
                  </span>
         </div>
         <div class="card">
-                <span class="content centre">
-                <h2 class="ui blue header"> Weather <i class = "large ${_station.weatherIcon}"></i></h2>
-
-                    <br>${_station.weatherOutlook}
-                   <br>
+                <span class="ui red header content centre">
+                <h2> Weather <i class = "large ${_station.weatherIcon}"></i></h2>
+                <h3>${_station.weatherOutlook}</h3>
                 </span>
         </div>
         <div class="card">
-                <span class="content centre">
-                    <h2 class="ui blue header"> Temp <i class="large temperature low icon"></i></h2>
-                        ${_station.latestTemp()} C
-                    <br>${_station.celciusToFahrenheit()} F
-                    <br>Max: ${_station.maxTemp} C
-                    <br>Min: ${_station.minTemp} C
+                <span class="ui grey header content centre">
+                    <h2>Temp<i class="large temperature low icon"></i></h2>
+                    <h3>    ${_station.latestTemp()} C
+                        <br>${_station.celciusToFahrenheit()} F
+                        <br>Max: ${_station.maxTemp} C
+                        <br>Min: ${_station.minTemp} C
+                    </h3>
                 </span>
         </div>
         <div class="card">
-                <span class="content centre">
-                    <h2 class="ui blue header"> Wind<i class="large wind icon"></i></h2>
-                        ${_station.calcBeaufort()} bft
-                    <br>${_station.compassDirection()}
-                    <br>Feels like
-                    ${_station.windChill()} C
+                <span class="ui green header content centre">
+                    <h2>Wind<i class="large wind icon"></i></h2>
+                    <h3>    ${_station.calcBeaufort()} bft
+                        <br>${_station.compassDirection()}
+                        <br>Feels like ${_station.windChill()} C
+                        <br>Min: ${_station.minWind} Km/h
+                        <br>Max: ${_station.maxWind} Km/h
+                    </h3>
                 </span>
         </div>
         <div class="card">
-                <span class="content centre">
-                <h2 class="ui blue header"> Pressure<i class="large bullseye icon"></i> </h2>
-                 1004 hpa<br>
+                <span class="ui orange header content centre">
+                <h2>Pressure<i class="large bullseye icon"></i> </h2>
+                <h3>    ${_station.latestPressure()} hpa
+                    <br>Min: ${_station.minPressure} hpa
+                    <br>Max: ${_station.maxPressure} hpa
+                </h3>
                 </span>
         </div>
     </div>

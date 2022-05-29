@@ -32,6 +32,58 @@ public class StationAnalytics {
     return maxTemp;
   }
 
+  public static Reading getMinWind(List<Reading> readings) {
+    Reading minWind = null;
+    if (readings.size() > 0) {
+      minWind = readings.get(0);
+      for (Reading reading : readings) {
+        if (reading.windSpeed < minWind.windSpeed){
+          minWind = reading;
+        }
+      }
+    }
+    return minWind;
+  }
+
+  public static Reading getMaxWind(List<Reading> readings) {
+    Reading maxWind = null;
+    if (readings.size() > 0) {
+      maxWind = readings.get(0);
+      for (Reading reading : readings) {
+        if (reading.windSpeed > maxWind.windSpeed){
+          maxWind = reading;
+        }
+      }
+    }
+    return maxWind;
+  }
+
+  public static Reading getMinPressure(List<Reading> readings) {
+    Reading minPressure = null;
+    if (readings.size() > 0) {
+      minPressure = readings.get(0);
+      for (Reading reading : readings) {
+        if (reading.pressure < minPressure.pressure){
+          minPressure = reading;
+        }
+      }
+    }
+    return minPressure;
+  }
+
+  public static Reading getMaxPressure(List<Reading> readings) {
+    Reading maxPressure = null;
+    if (readings.size() > 0) {
+      maxPressure = readings.get(0);
+      for (Reading reading : readings) {
+        if (reading.pressure > maxPressure.pressure){
+          maxPressure = reading;
+        }
+      }
+    }
+    return maxPressure;
+  }
+
 //  public static double getBeaufort(List<Reading> readings){
 //    double windSpeed = readings.get(readings.size()-1).windSpeed;
 //    if (windSpeed <= 1)

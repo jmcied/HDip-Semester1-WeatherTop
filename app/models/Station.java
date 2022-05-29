@@ -23,6 +23,10 @@ public class Station extends Model
   public double maxTemp;
   public String weatherOutlook;
   public String weatherIcon;
+  public double minWind;
+  public double maxWind;
+  public double minPressure;
+  public double maxPressure;
 
 
 
@@ -33,10 +37,6 @@ public class Station extends Model
     this.longitude = longitude;
 
   }
-
-//  public void setWeatherOutlook(String weatherOutlook){
-//    this.weatherOutlook = weatherOutlook;
-//  }
 
   public static  String codeToReport(int code) {
 
@@ -125,13 +125,24 @@ public class Station extends Model
     }
   }
 
+  public double latestPressure(){
+    if (readings.size() == 0) {
+      return 0;
+    }
+    else{
+      double latestPressure = readings.get(readings.size() - 1).pressure;
+
+      return latestPressure;
+    }
+  }
+
 
   public String calcBeaufort() {
     if (this.readings.size() > 0) {
       double windSpeed = this.readings.get(this.readings.size() - 1).windSpeed;
-      if (windSpeed <= 1)
+      if (windSpeed < 1)
         return "0";
-      else if (windSpeed > 1 && windSpeed < 6)
+      else if (windSpeed >= 1 && windSpeed < 6)
         return "1";
       else if (windSpeed >= 6 && windSpeed < 12)
         return "2";
@@ -153,6 +164,8 @@ public class Station extends Model
         return "10";
       else if (windSpeed >= 103 && windSpeed < 117)
         return "11";
+      else if (windSpeed >= 117)
+        return "12";
       else
         return "0";
     }

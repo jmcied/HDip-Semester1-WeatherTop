@@ -15,3 +15,8 @@ App is Uploaded on GitHub:https://github.com/jmcied/HDip-Semester1-WeatherTop
 App is Deployed on heroku:https://lit-crag-02372.herokuapp.com/
 
 Using Elephant SQL database
+
+References:
+https://fomantic-ui.com/modules/dropdown.html
+https://fomantic-ui.com/collections/form.html
+https://fomantic-ui.com/introduction/getting-started.html#using-a-cdn-provider

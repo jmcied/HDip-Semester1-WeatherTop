@@ -1,6 +1,7 @@
 package models;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -21,6 +22,7 @@ public class Station extends Model
   public double minTemp;
   public double maxTemp;
   public String weatherOutlook;
+  public String weatherIcon;
 
 
 
@@ -32,9 +34,9 @@ public class Station extends Model
 
   }
 
-  public void setWeatherOutlook(String weatherOutlook){
-    this.weatherOutlook = weatherOutlook;
-  }
+//  public void setWeatherOutlook(String weatherOutlook){
+//    this.weatherOutlook = weatherOutlook;
+//  }
 
   public static  String codeToReport(int code) {
 
@@ -59,6 +61,19 @@ public class Station extends Model
       return null;
   }
 
+  public String weatherIcon (int code) {
+    HashMap<Integer, String> weatherIcons = new HashMap<>();
+    weatherIcons.put(100, "sun icon");
+    weatherIcons.put(200, "cloud sun icon");
+    weatherIcons.put(300, "cloud icon");
+    weatherIcons.put(400, "cloud rain icon");
+    weatherIcons.put(500, "cloud heavy showers icon");
+    weatherIcons.put(600, "umbrella icon");
+    weatherIcons.put(700, "snowflake icon");
+    weatherIcons.put(800, "poo storm icon");
+
+    return weatherIcons.get(code);
+  }
 
 
 //  public static Reading getMinTemp(List<Reading> readings) {

@@ -17,7 +17,8 @@ public class StationCtrl extends Controller {
 
         for (Station weather : stations) {
             if (weather.readings.size() > 0){
-                weather.setWeatherOutlook(weather.codeToReport(weather.readings.get(weather.readings.size()-1).code));
+                weather.weatherOutlook = weather.codeToReport(weather.readings.get(weather.readings.size()-1).code);
+                weather.weatherIcon = weather.weatherIcon(weather.readings.get(weather.readings.size()-1).code);
                 weather.minTemp = StationAnalytics.getMinTemp(weather.readings).temperature;
 //                System.out.println("Min Temp: "+ weather.minTemp + " @ " + weather.name);     //Test Output
                 weather.maxTemp = StationAnalytics.getMaxTemp(weather.readings).temperature;

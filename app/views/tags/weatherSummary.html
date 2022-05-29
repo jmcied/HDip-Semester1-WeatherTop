@@ -1,21 +1,26 @@
-    <div class="ui five stackable cards ">
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.css">
+<script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.js"></script>
+<div class="ui five stackable cards ">
         <div class = "card">
                  <span class="content centre">
-                <h3 class = "ui blue header"> ${_station.name} </h3>
+                <h2 class = "ui blue header"> ${_station.name}<i class="large location arrow icon"></i></h2>
                         Lat: ${_station.latitude}
                     <br>Lng: ${_station.longitude}
                  </span>
         </div>
         <div class="card">
                 <span class="content centre">
-                <h3 class="ui blue header"> Weather </h3>
-                    ${_station.weatherOutlook}
+                <h2 class="ui blue header"> Weather <i class = "large ${_station.weatherIcon}"></i></h2>
+
+                    <br>${_station.weatherOutlook}
                    <br>
                 </span>
         </div>
         <div class="card">
                 <span class="content centre">
-                    <h3 class="ui blue header"> Temp </h3>
+                    <h2 class="ui blue header"> Temp <i class="large temperature low icon"></i></h2>
                         ${_station.latestTemp()} C
                     <br>${_station.celciusToFahrenheit()} F
                     <br>Max: ${_station.maxTemp} C
@@ -24,17 +29,16 @@
         </div>
         <div class="card">
                 <span class="content centre">
-                    <h3 class="ui blue header"> Wind</h3>
+                    <h2 class="ui blue header"> Wind<i class="large wind icon"></i></h2>
                         ${_station.calcBeaufort()} bft
                     <br>${_station.compassDirection()}
                     <br>Feels like
                     ${_station.windChill()} C
-                </h3>
                 </span>
         </div>
         <div class="card">
                 <span class="content centre">
-                <h3 class="ui blue header"> Pressure </h3>
+                <h2 class="ui blue header"> Pressure<i class="large bullseye icon"></i> </h2>
                  1004 hpa<br>
                 </span>
         </div>

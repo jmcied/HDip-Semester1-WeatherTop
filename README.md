@@ -18,5 +18,7 @@ Using Elephant SQL database
 
 References:
 https://fomantic-ui.com/modules/dropdown.html
+
 https://fomantic-ui.com/collections/form.html
+
 https://fomantic-ui.com/introduction/getting-started.html#using-a-cdn-provider

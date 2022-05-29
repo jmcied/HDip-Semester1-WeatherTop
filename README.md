@@ -22,3 +22,7 @@ https://fomantic-ui.com/modules/dropdown.html
 https://fomantic-ui.com/collections/form.html
 
 https://fomantic-ui.com/introduction/getting-started.html#using-a-cdn-provider
+
+https://www.w3schools.com/java/java_arrays_loop.asp
+
+https://www.javatpoint.com/java-math-pow-method
